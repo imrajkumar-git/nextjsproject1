@@ -96,10 +96,9 @@ const Header = () => {
                   as="a"
                   target="_blank"
                   href="/resume"
-                  border="2px"
-                  variant="outline"
-                  size="md"
-                  colorScheme="teal"
+                  
+                  
+                  className="px-6 py-3 bg-white backdrop-blur-md border-white text-white font-bold rounded-xl"
                 >
                   Resume
                 </Button>

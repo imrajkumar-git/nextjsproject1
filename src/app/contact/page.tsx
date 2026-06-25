@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Box,
   Button,
@@ -11,121 +10,93 @@ import {
   Textarea,
   Input,
   VStack,
-  FormErrorMessage,
 } from "@chakra-ui/react";
-import emailjs from "@emailjs/browser";
-import React, { useState, useRef } from "react";
+import { useState } from "react";
 import BaseLayout from "@/components/Wrapper/BaseLayout";
 import BaseText from "@/components/Wrapper/BaseText";
 import PageLayout from "@/components/layouts/PageLayout";
-import { helpers } from "@/helpers";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
-const Contact = () => {
-  const form = useRef<HTMLFormElement>(null);
-
-  const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-  const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPALTE_ID;
-  const publicApiKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
-
-  const [data, setData] = useState({
+const Home= ()=>{
+  const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
-  const [error, setError] = useState({
-    isError: false,
-    errorNameMessage: "",
-    errorEmailMessage: "",
-    errorMessage: "",
-  });
+  const [result, setResult] = useState<{
+    success: boolean;
+    message: string;
+  } | null>();
 
-  const sendEmail = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleChange = (
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement
+    >
+  ) => {
+    setFormData({
+      ...formData,
+      [event.target.id]: event.target.value,
+    });
+  };
 
-    const { name, email, message } = data;
+  const onSubmit = async (
+    event: React.FormEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
+    setResult({
+      success: true,
+      message: "sending.....",
+    });
 
-    if (!data.name) {
-      setError({
-        ...error,
-        isError: true,
-        errorNameMessage: "Please enter your name",
+    const body = {
+      ...formData,
+      access_key:  "1b32e9c7-08cf-4c0b-8915-9ac224f3592e"
+    };
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    );
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult({
+        success: true,
+        message: "Form Submitted Successfully",
       });
-    }
-
-    if (!data.email) {
-      setError({
-        ...error,
-        isError: true,
-        errorEmailMessage: "Please enter your email address",
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
       });
-    }
-
-    if (!data.message) {
-      setError({
-        ...error,
-        isError: true,
-        errorMessage: "Please enter your message",
-      });
-    }
-
-    if (helpers.validEmail(email) && name && email && message && form.current) {
-      setError({
-        isError: false,
-        errorNameMessage: "",
-        errorEmailMessage: "",
-        errorMessage: "",
-      });
-
-      emailjs
-        .sendForm(serviceId!, templateId!, form.current, publicApiKey!)
-        .then((res) => {
-          if (res.status === 200) {
-            helpers.alertToastHandling(
-              "Thanks for reaching out, your message has been sent. I'll get back to you shortly :)"
-            );
-          }
-        })
-        .catch((err) => {
-          console.log(err);
-        });
     } else {
-      setError({
-        ...error,
-        isError: true,
-        errorEmailMessage: "Please enter a valid email",
+      console.log("Error", data);
+      setResult({
+        success: false,
+        message: data.message,
       });
     }
-  };
-
-  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setData({
-      ...data,
-      name: e.target.value,
-    });
-  };
-
-  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setData({
-      ...data,
-      email: e.target.value,
-    });
-  };
-
-  const handleChangeMessage = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setData({
-      ...data,
-      message: e.target.value,
-    });
   };
 
   return (
     <PageLayout>
-      <BaseLayout>
-          <BaseText
-            firstTitle="Contact"
+//       <BaseLayout>
+    <BaseText firstTitle="Contact"
             secondTitle="Freelancer"
             textIcon="https://ik.imagekit.io/ayushsoni1010/Website/contact?ik-sdk-version=javascript-1.4.3&updatedAt=1669666339518"
             leftSpacing={4}
@@ -154,119 +125,100 @@ const Contact = () => {
                 my={{ base: 10, lg: 10, md: 10, sm: 20, xs: 20 }}
                 borderRadius="10px"
               />
-            </GridItem>
-            <GridItem
+              </GridItem>
+<GridItem
               maxW="md"
               mt={{ base: 0, md: 0, lg: 0, sm: 10, xs: 10 }}
             >
-              <Box borderRadius="10px" boxShadow="lg">
-                <form ref={form} onSubmit={sendEmail}>
-                  <VStack p="10">
-                    <FormControl
-                      isRequired={error.isError}
-                      isInvalid={error.isError}
-                    >
-                      <FormLabel htmlFor="Name">Name</FormLabel>
-                      <Input
+               <Box borderRadius="10px" boxShadow="lg">
+ <form onSubmit={onSubmit} >
+   <VStack p="10">
+                <FormControl>
+                
+           <FormLabel htmlFor="Name">Name</FormLabel>                 
+            <Input
                         type="text"
-                        name="name"
-                        id="name"
-                        value={data.name}
-                        variant="filled"
-                        placeholder="John Doe"
-                        required
-                        onChange={handleChangeName}
+              id="name"
+              placeholder="Enter your name"
+              value={formData.name}
+              onChange={handleChange}
+                
                       />
-                      {error.isError ? (
-                        <FormErrorMessage>
-                          {error.errorNameMessage}
-                        </FormErrorMessage>
-                      ) : (
-                        <p>{error.isError}</p>
-                      )}
-                    </FormControl>
-
-                    <FormControl
-                      isRequired={error.isError}
-                      isInvalid={
-                        error.isError && error.errorEmailMessage.length === 0
-                      }
-                    >
-                      <FormLabel htmlFor="Email">Email</FormLabel>
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor="Email">Email</FormLabel>
                       <Input
                         type="email"
-                        name="email"
-                        id="email"
-                        variant="filled"
-                        placeholder="johndoe@gmail.com"
+              id="email"
+              placeholder="Enter your email"
+              value={formData.email}
+              onChange={handleChange}
                         required
-                        value={data.email}
-                        onChange={handleChangeEmail}
+                     
                       />
-                      {error.isError ? (
-                        <FormErrorMessage>
-                          {error.errorEmailMessage}
-                        </FormErrorMessage>
-                      ) : (
-                        <></>
-                      )}
-                    </FormControl>
-
-                    <FormControl
-                      isRequired={error.isError}
-                      isInvalid={
-                        error.isError && error.errorMessage.length === 0
-                      }
-                    >
-                      <FormLabel htmlFor="Message">Message</FormLabel>
-                      <Textarea
-                        name="message"
+            </FormControl>
+            <FormControl>
+             <FormLabel htmlFor="Message">Message</FormLabel>                    <Textarea
                         id="message"
-                        variant="filled"
-                        placeholder="Hey there! Let's connect"
+              placeholder="Enter your message"
+              value={formData.message}
+              onChange={handleChange}
                         required
-                        value={data.message}
-                        onChange={handleChangeMessage}
+                        
+                
                       />
-                      {error.isError ? (
-                        <FormErrorMessage>
-                          {error.errorMessage}
-                        </FormErrorMessage>
-                      ) : (
-                        <></>
-                      )}
-                    </FormControl>
-
-                    <Button
+            </FormControl>
+            {/* <FormControl>
+            <label
+              htmlFor="message"
+              className="mb-2 text-sm font-medium text-gray-900"
+            >
+              Message
+            </label>
+            <textarea
+              rows={6}
+              id="message"
+              placeholder="Enter your message"
+              value={formData.message}
+              onChange={handleChange}
+             
+              required
+            />
+            </FormControl> */}
+            <FormControl>
+          <Button
+                    type="submit"
                       w="full"
                       my="4"
-                      type="submit"
                       variant="solid"
                       colorScheme="teal"
                       _focus={{ transform: "scale(1.02)" }}
                     >
                       Send email
                     </Button>
-                  </VStack>
-                </form>
-              </Box>
+          </FormControl>
+          </VStack>
+        </form>
+        </Box>
             </GridItem>
-          </Grid>
-        </BaseLayout>
-        <ToastContainer
-          position="top-center"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-        />
+            </Grid>
+            
+       
+        {result && (
+          <>
+            {result?.success ? (
+              <div className="bg-green-400 mt-10 p-3 rounded-lg">
+                {result.message}
+              </div>
+            ) : (
+              <div className="bg-red-400 mt-10 p-3 rounded-lg">
+                {result.message}
+              </div>
+            )}
+          </>
+        )}
+    </BaseLayout>
     </PageLayout>
   );
-};
-
-export default Contact;
-
+}
+export default Home;
