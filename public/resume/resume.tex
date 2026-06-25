@@ -1,0 +1,288 @@
+%------------------------
+  % Resume in Latex
+  % Name: Ayush Soni
+  % GitHub: https://github.com/ayushsoni1010
+  % License: MIT
+%------------------------
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage{ragged2e}
+
+\usepackage{xcolor}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+\usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generated pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      {#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeEduheading}[4]{
+\vspace{2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    {#1} & #2 \\
+    \textit{\small#3} & \textit{\small #4}\\
+    % \textit{\small#5} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+%-------------------------------------------
+%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%
+
+\begin{document}
+
+% ---------- HEADING ----------
+
+\begin{center}
+\textbf{\Huge \scshape Ayush Soni} \\ \vspace{8pt}
+\href{tel:9644963410}{+91 9644963410} $|$
+{Pune, India} $|$
+{Full Stack Developer} $|$
+\href{mailto:ayushsoni1010.work@gmail.com}{ayushsoni1010.work@gmail.com} \\ \vspace{3pt}
+
+\href{https://linkedin.com/in/ayushsoni1010}{\underline{linkedin.com/in/ayushsoni1010}} $|$
+\href{https://github.com/ayushsoni1010}{\underline{github.com/ayushsoni1010}} $|$
+\href{https://x.com/ayushsoni1010}{\underline{x.com/ayushsoni1010}} $|$
+\href{https://ayushsoni1010.com}{\underline{ayushsoni1010.com}}
+\end{center}
+
+
+% ---------- PROGRAMMING SKILLS ----------
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+      \textbf{Languages}{: \hfill JavaScript, TypeScript, Python, SQL } \\
+      \vspace{3pt}\textbf{Libraries/Frameworks}{: \hfill React, Next.js, Vue, Nuxt.js, Redux, Zustand, Node.js, Express, Socket.io, FastAPI, tRPC} \\
+      \vspace{3pt}\textbf{UI Component Libraries/CSS}{: \hfill Chakra UI, Shadcn UI, Ant Design, Material UI, styled-components, TailwindCSS, Framer} \\
+      \vspace{3pt}\textbf{Databases/Servers}{: \hfill MongoDB, MySQL, PostgreSQL, pgvector, Redis, Prisma, Drizzle, Nginx} \\
+      \vspace{3pt}\textbf{Platforms/Tools}{: \hfill AWS, Docker, Firebase, Supabase, Clerk, Vercel, Netlify, Webpack, Vite, GitHub Actions} \\
+      \vspace{3pt}\textbf{AI/Tools}{: \hfill LLMs, RAG, AI Agents, MCP, SSE, Hugging Face, LangChain, Prompt Engineering, Cursor} \\
+      \vspace{3pt}\textbf{Others}{: \hfill WebSockets, WebRTC, Strapi, Chart.js, Three.js, Jest, Storybook, Figma, Swagger, Postman}
+      }}
+\end{itemize}
+
+
+% ---------- EXPERIENCE ----------
+
+\section{Experience}
+\resumeSubHeadingListStart
+
+% ------------------------
+\resumeSubheading
+{\textbf{\href{https://attentions.ai}{Attentions AI}\hspace{5pt}}{}}{(Onsite) Pune, India}
+{\textbf{Software Development Engineer – Full-time}}{October 2024 -- February 2026}
+\resumeItemListStart
+\resumeItem{Built 4 production micro-frontends(Artigen, Connect, Docu, Lumina) for Q\&A on documents, call centers, e-commerce solution.}
+\resumeItem{Engineered chat module with streaming UI, markdown/LaTeX parser, AI agents \& MCP connectors, improving app perf by 60\%.}
+\resumeItem{Built a multi-tenant RBAC system with org, department, team, user roles, enabling secure data isolation and role-based sharing.}
+\resumeItemListEnd
+% ------------------------
+
+
+% ------------------------
+\resumeSubheading
+{\textbf{\href{https://go2work.com}{Go2work}\hspace{5pt}}{}}{(Remote) Houston, Texas, United States}
+{\textbf{Frontend Engineer – Full time}}{November 2023 -- October 2024}
+\resumeItemListStart
+\resumeItem{Built hiring platform dashboard from scratch using TypeScript/Next.js, architected reusable component library with Shadcn UI.}
+\resumeItem{Optimized application performance by 70\% through code refactoring, UI improvements, and chaos engineering implementation.}
+\resumeItem{Delivered real-time WebSocket chat system, push notifications, and secure Firebase authentication for seamless user workflows.}
+\resumeItemListEnd
+% ------------------------
+
+
+% ------------------------
+\resumeSubheading
+{\textbf{\href{https://fifhtry.com}{FifthTry}\hspace{5pt}}{}}{(Remote) Bengaluru, India}
+{\textbf{Developer Relations Engineer – Full time}}{April 2023 -- September 2023}
+\resumeItemListStart
+\resumeItem{Built 10+ sample applications with fastn framework, contributed to Rust-based core development, driving developer adoption.}
+\resumeItem{Developed comprehensive documentation platform, delivered technical workshops to 5000+ developers across multiple cities.}
+\resumeItem{Organized 12+ nationwide community events, grew developer community by 300\%, established key partnership relationships.}
+\resumeItemListEnd
+% ------------------------
+
+
+% ------------------------
+\resumeSubheading
+{\textbf{\href{https://magic.app}{Magic}\hspace{3pt}}{}}{(Remote) Delhi, India}
+% {Magic}{Remote, Delhi}
+{\textbf{Product Engineer – Intern}}{January 2023 -- March 2023}
+\resumeItemListStart
+\resumeItem{Engineered SaaS dashboard for 10+ Slack communities, eliminating 60\% of platform switching and boosting engagement rates.}
+\resumeItem{Developed authentication system, password recovery flows, and created the sitemaps using NuxtJS and Parse Server integration.}
+\resumeItem{Delivered community events module, implemented LogRocket analytics integration that decreased bug resolution time by 60\%.}
+\resumeItemListEnd
+% ------------------------
+
+
+% ------------------------
+\resumeSubheading
+{\textbf{\href{https://economize.cloud}{Economize}\hspace{3pt}}{}}{(Remote) Bengaluru, India}
+% {Economize}{Remote, Bengaluru}
+{\textbf{Software Engineer – Intern}}{October 2021 -- November 2022}
+\resumeItemListStart
+\resumeItem{Developed cloud cost optimization SaaS dashboard serving 500+ enterprise clients across AWS and GCP platforms using Vue.js.}
+\resumeItem{Delivered 40\% UX improvement of documentation, AWS/GCP report tables, and implemented Storybook + Strapi CMS setup.
+}
+\resumeItem{Created component library with 15+ reusable elements using Ant Design and Chart.js, accelerating team development by 30\%.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+% ------------------------
+
+
+% ---------- PROJECTS ----------
+
+\section{Projects}
+
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{\href{https://github.com/useframe/frontend}{Frame AI}\hspace{5pt}}{{[Next.js, tRPC, Prisma, Supabase, Inngest, E2B, AI Agents]}}}{}
+\resumeItemListStart
+\resumeItem{Built AI code generation platform using AI Agents that converts natural language prompts into production-ready Next.js apps.}
+\resumeItem{Architected agent system with Inngest for async processing and E2B sandboxes, enabling secure code execution and live preview.}
+\resumeItem{Implemented type-safe tRPC API with Prisma, real-time chat with TanStack Query, file explorer syntax highlighting visualization.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{\href{https://github.com/ayushsoni1010/proto-ai}{Proto AI}\hspace{5pt}}{{[Next.js, Express.js, Supabase, AWS S3 \& Rekognition, BullMQ]}}}{}
+\resumeItemListStart
+\resumeItem{Built image processing platform with chunked uploads, WebSocket progress tracking and BullMQ queue-based batch processing.}
+\resumeItem{Architected validation system with AWS Rekognition face detection, blur detection, duplicate prevention, and HEIC conversion.}
+\resumeItem{Implemented rate-limiting, drag-and-drop interface, image gallery with filtering, and advanced Sharp image processing pipeline.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+% ---------- EDUCATION ----------
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeEduheading
+{Medi-Caps University}{Indore, Madhya Pradesh, India}
+{Bachelor of Technology in Computer Science and Engineering}{CGPA: 8.7/10}
+\resumeSubHeadingListEnd
+
+
+
+% ---------- Awards, Community and Volunteer Experience ----------
+\section{Awards, Community \& Volunteer Experience}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+      \resumeItemListStart
+              \resumeItem{\textbf{\href{https://mlh.io}{Major League Hacking}}{: Participated in multiple hackathons organized by MLH like Abracadabra Hacks, MLH INIT, Local Hack Day, Design-a-thon, Wittyhacks and attended MLH HackCon IN conference in-person in Delhi.}} \vspace{3pt}
+              \resumeItem{\textbf{\href{https://studentambassadors.microsoft.com/}{Microsoft Learn Student Ambassador}}{: Conducted hands-on sessions on Git, GitHub, frontend development, open source contribution, taught best practices and promoted Hacktoberfest, and built hands-on projects.}} \vspace{3pt}
+              \resumeItem{\textbf{Mentor at {\href{https://hackacode.anyonecanco.de}{AnyoneCanCo.de}}, {\href{https://hackthenorth.com}{HackTheNorth}}, {\href{https://swoc.scriptindia.org}{Script Winter of Code}}, {\href{https://gdsc.community.dev/medi-caps-university-indore}{GDSC Medicaps}}:}
+{I've mentored aspiring developers, and designers in hackathons and open-source programs, helping them build innovative projects.}} \vspace{3pt}
+              \resumeItem{\textbf{\href{https://devpost.com/software/budgetstay}{Hackathon Winner at HackThisFall for Most Creative Use of Twilio}}} \vspace{3pt}
+              \resumeItem{{As a hacker, built a {\textbf{\href{https://devfolio.co/projects/mystic-899b}{{P2P based Play-to-Earn game}}}} in a team at {\textbf{\href{https://ethindia.co/}{{ETHIndia'23}}}} hackathon and won NFTs \& bounties. }} \vspace{3pt} 
+    \resumeItemListEnd
+  }}
+\end{itemize}
+
+\end{document}
+
+
+%%%%%%%%%%%  RESUME ENDS HERE  %%%%%%%%%%%
+%-------------------------------------------
