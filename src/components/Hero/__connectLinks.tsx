@@ -8,7 +8,7 @@ import { FaYoutube } from "react-icons/fa";
 export const connectionLinks = [
   {
     name: "LinkedIn",
-    link: "https://www.linkedin.com/in/ayushsoni1010/",
+    link: "/",
     icon: <FaLinkedinIn />,
   },
   {
@@ -18,22 +18,21 @@ export const connectionLinks = [
   },
   {
     name: "GitHub",
-    link: "https://github.com/ayushsoni1010",
+    link: "https://github.com/imrajkumar-git",
     icon: <FaGithub />,
   },
   {
     name: "Instagram",
-    link: "https://www.instagram.com/aayushsoni1010",
+    link: "/",
     icon: <FiInstagram />,
   },
   {
-    name: "Youtube",
-    link: "https://youtube.com/@ayushsoni1010",
+    name: "Y/",
     icon: <FaYoutube />,
   },
   {
     name: "Mail",
-    link: "mailto:ayushsoni1010.work@gmail.com",
+    link: "mailto:rajkumarayal.com.np",
     icon: <MdEmail />,
   },
 ];

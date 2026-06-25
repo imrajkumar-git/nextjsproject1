@@ -53,9 +53,9 @@ const About = () => {
         >
           <GridItem colSpan={2}>
             <Image
-              src="/profile.jpg"
+              src="/444.jpg"
               alt="Hero"
-              w="320px"
+              w="340px"
               borderRadius="10px"
             />
           </GridItem>
@@ -72,7 +72,7 @@ const About = () => {
                   fontWeight: 500,
                 }}
               >
-                Ayush Soni
+                Rajkumar Aryal
               </span>{" "}
               , a passionate full-stack developer and devrel engineer with a
               love for open-source and UI designing. I specialize in building
