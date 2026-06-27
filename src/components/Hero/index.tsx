@@ -123,7 +123,7 @@ const Hero = () => {
               <Button
                 as="a"
                 target="_blank"
-                href="mailto:ayushsoni1010.work@gmail.com"
+                href="mailto:rajkumararyal0977@gmail.com"
                 border="2px"
                 variant="outline"
                 size={{ base: "md", md: "md", sm: "sm" }}
@@ -135,7 +135,7 @@ const Hero = () => {
                 colorScheme="teal"
                 target="_blank"
                 as="a"
-                href="https://cal.com/ayushsoni1010/"
+                href="https://cal.com/rajkumar0977/"
                 variant="solid"
                 size={{ base: "md", md: "md", sm: "sm" }}
                 bgGradient="linear(to-r, teal.500, green.400)"

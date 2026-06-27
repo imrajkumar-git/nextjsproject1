@@ -60,7 +60,7 @@ const CollapseMenu = ({ isOpen, setOpen }) => {
             </Button>
             <Button
               as="a"
-              href="https://cal.com/ayushsoni1010/"
+              href="https://cal.com/imrajkumargit/"
               target="_blank"
               variant="solid"
               size="sm"

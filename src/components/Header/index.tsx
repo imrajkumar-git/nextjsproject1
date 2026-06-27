@@ -106,7 +106,7 @@ const Header = () => {
                   colorScheme="teal"
                   target="_blank"
                   as="a"
-                  href="https://cal.com/ayushsoni1010/"
+                  href="https://github.com/imrajkumar-git/"
                   variant="solid"
                   size="md"
                   bgGradient="linear(to-r, teal.500, green.400)"

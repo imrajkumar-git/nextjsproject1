@@ -16,7 +16,8 @@ import BaseLayout from "@/components/Wrapper/BaseLayout";
 import BaseText from "@/components/Wrapper/BaseText";
 import PageLayout from "@/components/layouts/PageLayout";
 interface FormData {
-  name: string;
+  firstname: string;
+  lastname:string;
   email: string;
   subject: string;
   message: string;
@@ -24,7 +25,8 @@ interface FormData {
 
 const Home= ()=>{
   const [formData, setFormData] = useState<FormData>({
-    name: "",
+    firstname:"",
+    lastname: "",
     email: "",
     subject: "",
     message: "",
@@ -79,7 +81,8 @@ const Home= ()=>{
         message: "Form Submitted Successfully",
       });
       setFormData({
-        name: "",
+        firstname:"",
+        lastname: "",
         email: "",
         subject: "",
         message: "",
@@ -99,7 +102,7 @@ const Home= ()=>{
     <BaseText firstTitle="Contact"
             secondTitle="Freelancer"
             textIcon="https://ik.imagekit.io/ayushsoni1010/Website/contact?ik-sdk-version=javascript-1.4.3&updatedAt=1669666339518"
-            leftSpacing={4}
+            leftSpacing={5}
           />
           <Grid
             display={{
@@ -135,12 +138,24 @@ const Home= ()=>{
    <VStack p="10">
                 <FormControl>
                 
-           <FormLabel htmlFor="Name">Name</FormLabel>                 
+           <FormLabel htmlFor="First Name">First Name</FormLabel>                 
             <Input
                         type="text"
-              id="name"
-              placeholder="Enter your name"
-              value={formData.name}
+              id="firstname"
+              placeholder="Enter your first name"
+              value={formData.firstname}
+              onChange={handleChange}
+                
+                      />
+            </FormControl>
+             <FormControl>
+                
+           <FormLabel htmlFor="Name">Last Name</FormLabel>                 
+            <Input
+                        type="text"
+              id="lastname"
+              placeholder="Enter your Last name"
+              value={formData.lastname}
               onChange={handleChange}
                 
                       />
@@ -156,6 +171,10 @@ const Home= ()=>{
                         required
                      
                       />
+            </FormControl>
+            <FormControl>
+              <FormLabel htmlFor="subect">Subject</FormLabel>
+              <Input type="subject" id="subject" placeholder="Enter your Subject" value={formData.subject} onChange={handleChange} required />
             </FormControl>
             <FormControl>
              <FormLabel htmlFor="Message">Message</FormLabel>                    <Textarea
