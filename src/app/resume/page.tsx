@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Resume",
-  description: "Download or view Ayush Soni's resume",
+  description: "Download or view my resume",
 };
 
 /**
@@ -13,10 +13,10 @@ const Resume = () => {
   return (
     <div style={{ height: "100vh" }}>
       <iframe
-        src="https://ayushsoni1010.com/resume/resume.pdf"
+        src="resume/resume.pdf"
         width="100%"
         height="100%"
-        title="Ayush Soni Resume"
+        title="Rajkumar Resume"
       />
     </div>
   );

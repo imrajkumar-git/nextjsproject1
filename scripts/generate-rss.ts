@@ -5,14 +5,14 @@ import matter from "gray-matter";
 
 (async function generate() {
   const feed = new RSS({
-    title: "Ayush Soni",
-    description: "Hey! I am Ayush, a full-stack developer from India",
+    title: "Rajkumar Aryal",
+    description: "Hey! I am Rajkumar, a full-stack developer from Nepal live in UAE",
     feed_url: "https://ayushsoni1010.com/feed.xml",
-    site_url: "https://ayushsoni1010.com",
+    site_url: "https://rajkumarayal.com.np",
     managingEditor: "Ayush Soni",
-    webMaster: "Ayush Soni",
+    webMaster: "Rajkumar",
     language: "en",
-    copyright: `Ayush Soni | ${new Date().getFullYear()}`,
+    copyright: `Rajkumar Aryal | ${new Date().getFullYear()}`,
   });
 
   const postsDir = path.join(__dirname, "..", "data", "blogs");
@@ -28,7 +28,7 @@ import matter from "gray-matter";
         title: frontmatter.data.title,
         description: frontmatter.data.subtitle,
         url: frontmatter.data.url,
-        author: "Ayush Soni",
+        author: "Rajkumar Aryal",
         date: frontmatter.data.date,
         categories: frontmatter.data.tags?.split(", "),
       });

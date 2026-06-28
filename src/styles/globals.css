@@ -112,6 +112,51 @@
   --sidebar-ring: oklch(0.552 0.016 285.938);
 }
 
+
+element.style {
+}
+@media screen and (min-width: 280px) {
+    .css-129120f {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+}
+@media screen and (min-width: 429px) {
+.css-129120f {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: var(--chakra-space-5);
+    padding: var(--chakra-space-5);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    border-radius: 23rem;
+    /* min-height: var(--chakra-sizes-lg); */
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    background: #0c0e0e;
+}
+}
+@media screen and (min-width: 429px) {
+    .css-1km8aaq {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+@media screen and (min-width: 280px) {
+    .css-1km8aaq {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
