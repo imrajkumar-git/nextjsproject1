@@ -82,6 +82,7 @@ const Hero = () => {
               </Stack>
               <Stack display="flex" direction="row">
                 <Text colorScheme="black">and</Text>
+
                 <Text
                   bgGradient="linear(to-tr, teal.500, green.400)"
                   bgClip="text"
