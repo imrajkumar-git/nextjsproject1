@@ -1,7 +1,7 @@
 import PageLayout from "@/components/layouts/PageLayout";
 import Hero from "@/components/Hero";
 import Home from "@/components/Home";
-
+// import Particles from "./particle";
 /**
  * Landing page component
  * Client component for scroll restoration and interactivity
@@ -9,6 +9,7 @@ import Home from "@/components/Home";
 export default function Landing() {
   return (
     <PageLayout>
+     
       <Hero />
       <Home />
     </PageLayout>

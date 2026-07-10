@@ -121,26 +121,36 @@ const Hero = () => {
               </span>{" "}
             </Text>
             <ButtonGroup gap="1">
-              <Button
-                as="a"
+      <Button className="relative inline-block overflow-hidden rounded-lg border border-cyan-400 px-6 py-3 text-lg font-semibold uppercase tracking-widest text-cyan-400 transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_10px_#00fffc,0_0_25px_#00fffc,0_0_50px_#00fffc,0_0_100px_#00fffc]"
                 target="_blank"
-                href="mailto:rajkumararyal0977@gmail.com"
-                border="2px"
-                variant="outline"
-                size={{ base: "md", md: "md", sm: "sm" }}
-                colorScheme="teal"
+                as="a"
+                href="/contact"
+                
               >
-                Hire me
+                 <span className="absolute left-0 top-0 h-[2px] w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-top" />
+
+      <span className="absolute right-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-cyan-400 to-transparent animate-right" />
+
+      <span className="absolute bottom-0 right-0 h-[2px] w-full bg-gradient-to-l from-transparent via-cyan-400 to-transparent animate-bottom" />
+
+      <span className="absolute bottom-0 left-0 h-full w-[2px] bg-gradient-to-t from-transparent via-cyan-400 to-transparent animate-left" />
+
+                Hire Me
               </Button>
-              <Button
-                colorScheme="teal"
+              <Button className="relative inline-block overflow-hidden rounded-lg border border-cyan-400 px-6 py-3 text-lg font-semibold uppercase tracking-widest text-cyan-400 transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:shadow-[0_0_10px_#00fffc,0_0_25px_#00fffc,0_0_50px_#00fffc,0_0_100px_#00fffc]"
                 target="_blank"
                 as="a"
                 href="https://cal.com/rajkumar0977/"
-                variant="solid"
-                size={{ base: "md", md: "md", sm: "sm" }}
-                bgGradient="linear(to-r, teal.500, green.400)"
+                
               >
+                 <span className="absolute left-0 top-0 h-[2px] w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-top" />
+
+      <span className="absolute right-0 top-0 h-full w-[2px] bg-gradient-to-b from-transparent via-cyan-400 to-transparent animate-right" />
+
+      <span className="absolute bottom-0 right-0 h-[2px] w-full bg-gradient-to-l from-transparent via-cyan-400 to-transparent animate-bottom" />
+
+      <span className="absolute bottom-0 left-0 h-full w-[2px] bg-gradient-to-t from-transparent via-cyan-400 to-transparent animate-left" />
+
                 Schedule a Meeting
               </Button>
             </ButtonGroup>

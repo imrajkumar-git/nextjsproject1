@@ -7,7 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Links",
-  description: "Connect with Ayush Soni on various platforms and social media",
+  description: "Connect with Rajkumar on various platforms and social media",
 };
 
 /**

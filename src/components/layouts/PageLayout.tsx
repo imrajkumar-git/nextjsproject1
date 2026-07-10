@@ -2,7 +2,6 @@ import React from "react";
 import { Box } from "@chakra-ui/react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
 interface PageLayoutProps {
   children: React.ReactNode;
 }
@@ -13,7 +12,9 @@ interface PageLayoutProps {
  */
 export default function PageLayout({ children }: PageLayoutProps) {
   return (
-    <Box>
+    <>
+    
+ <Box>
       <header>
         <Header />
       </header>
@@ -22,6 +23,9 @@ export default function PageLayout({ children }: PageLayoutProps) {
         <Footer />
       </footer>
     </Box>
+    </>
+ 
+   
   );
 }
 
