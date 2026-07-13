@@ -69,7 +69,24 @@ export default async function RootLayout({
           {children}
         </Providers>
         </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function () {
+  (window).wonderchatSettings = {
+    id: "cmrivlwz60b198qnfzlsb0w71",
+    address: "app.wonderchat.io",
+    widgetSize: "normal",
+    widgetButtonSize: "normal"
+  };
+  var s = document.createElement("script");
+  s.src = "https://app.wonderchat.io/scripts/wonderchat.js";
+  s.defer = true;
+  document.body.appendChild(s);
+})();`,
+          }}
+        />
       </body>
+      
     </html>
   );
 }
