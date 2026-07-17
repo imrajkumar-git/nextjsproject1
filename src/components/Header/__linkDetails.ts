@@ -23,4 +23,5 @@ export const linkDetails = [
     name: "Contact",
     link: "/contact",
   },
+  
 ];

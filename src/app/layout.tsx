@@ -51,19 +51,19 @@ export default async function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="relative min-h-screen overflow-x-hidden">
-         <Particles
-    particleColors={["#ffffff"]}
-    particleCount={200}
-    particleSpread={10}
-    speed={0.1}
-    particleBaseSize={100}
-    moveParticlesOnHover
-    alphaParticles={false}
-    disableRotation={false}
-    pixelRatio={1}
-    className="absolute top-0 left-0 w-full h-full z-0"
-/>
+      <body>
+        <div className="stars">
+</div>
+<div className="shooting-star"></div>
+<div className="shooting-star"></div>
+<div className="shooting-star"></div>
+<div className="shooting-star"></div>
+<div className="shooting-star"></div>
+​<div className="shooting-star"></div>
+<div className="shooting-star"></div>
+<div className="shooting-star"></div>
+<div className="shooting-star"></div>
+<div className="shooting-star"></div>
     <div className="absolute top-0 left-0 w-full h-full z-0">
        <Providers cookies={cookieHeader}>
           {children}
