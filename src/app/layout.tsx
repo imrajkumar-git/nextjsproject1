@@ -1,6 +1,5 @@
 import { cookies } from "next/headers";
 import Providers from "./providers";
-import Particles from "@/components/particle";
 import "../styles/globals.css";
 
 export const metadata = {
